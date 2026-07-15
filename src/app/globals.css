@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   SPATIAL PRIME — STRIPE-STYLE DESIGN SYSTEM
+   Cloned visual language of stripe.com: angled animated gradient,
+   grotesque sans (Inter ≈ Söhne), blurple accents, gradient dividers.
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ---- Neutrals (Stripe's exact palette) ---- */
+  --color-white: #ffffff;
+  --color-off: #f6f9fc;
+  --color-light: #e3e8ee;
+  --color-border: #d8dee4;
+  --color-gray: #697386;
+  --color-dark: #425466;
+  --color-ink: #0a2540; /* Stripe navy — primary text */
+
+  /* ---- Accent — Stripe blurple ---- */
+  --color-accent: #635bff;
+  --color-accent-dark: #4b45c6;
+  --color-accent-light: #f0eeff;
+
+  /* ---- Gradient stops ---- */
+  --color-grad-1: #635bff;
+  --color-grad-2: #0073e6;
+  --color-grad-3: #00d4ff;
+
+  /* ---- Dark "command center" surfaces (dashboard) ---- */
+  --color-abyss: #05070f;
+  --color-panel: #0c1222;
+  --color-panel-2: #111a2e;
+  --color-hairline: #1e2a44;
+  --color-mute: #7385a8;
+  --color-frost: #b7c4dc;
+
+  /* ---- Semantic status ---- */
+  --color-ok: #22c55e;
+  --color-warn: #f5a623;
+  --color-danger: #ef4444;
+  --color-info: #00d4ff;
+
+  /* ---- Fonts ---- */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-brand: 12px;
+}
+
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--color-white);
+  color: var(--color-ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Display headings (Stripe = bold grotesque, tight tracking) ── */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Gradient text emphasis */
+.text-gradient {
+  background: linear-gradient(108deg, var(--color-grad-1), var(--color-grad-2) 60%, var(--color-grad-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ═══ STRIPE SIGNATURE ANIMATED MESH GRADIENT ═══ */
+.stripe-mesh {
+  background-color: #635bff;
+  background-image:
+    radial-gradient(at 16% 24%, #8b83ff 0px, transparent 46%),
+    radial-gradient(at 84% 10%, #00d4ff 0px, transparent 46%),
+    radial-gradient(at 74% 74%, #0073e6 0px, transparent 46%),
+    radial-gradient(at 28% 82%, #b8a6ff 0px, transparent 46%),
+    radial-gradient(at 55% 46%, #635bff 0px, transparent 58%);
+  background-size: 165% 165%;
+  animation: mesh-pan 20s var(--ease-out-expo) infinite alternate;
+}
+@keyframes mesh-pan {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 42%;
+  }
+  100% {
+    background-position: 42% 100%;
+  }
+}
+
+/* Diagonal-cut hero sheet (Stripe's angled gradient block) */
+.hero-sheet {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+/* Angled top edge for sections that follow a gradient */
+.skew-divider {
+  clip-path: polygon(0 3.5vw, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Grain overlay for gradient realism */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Dashboard utilities (unchanged) */
+.glass {
+  background: color-mix(in srgb, var(--color-panel) 82%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid var(--color-hairline);
+}
+.spatial-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-hairline) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-hairline) 55%, transparent) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Card hover lift */
+.lift {
+  transition:
+    transform 0.25s var(--ease-out-expo),
+    box-shadow 0.25s var(--ease-out-expo);
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(10, 37, 64, 0.12);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .stripe-mesh {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.82);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2.4s var(--ease-out-expo) infinite;
+}
+@keyframes sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ping-ring {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.8;
+  }
+  80%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.ping-ring {
+  animation: ping-ring 2.8s var(--ease-out-expo) infinite;
+}
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.float-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+.scroll-dark::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-dark::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 8px;
+}
+.scroll-dark::-webkit-scrollbar-track {
+  background: transparent;
+}
