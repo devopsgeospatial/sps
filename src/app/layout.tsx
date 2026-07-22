@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const SITE_URL = "https://spatial-prime.com";
+const SITE_URL = "https://spatialprime.rw";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
