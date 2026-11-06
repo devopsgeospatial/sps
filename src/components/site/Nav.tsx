@@ -17,9 +17,8 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // On the gradient hero the nav is transparent with white text;
-  // once scrolled it turns solid white with dark text — Stripe pattern.
-  const light = !scrolled;
+  // The hero is a pale sheet (white gradient over the Kigali photo), so the
+  // nav keeps dark text at all times; only the bar background reacts to scroll.
 
   return (
     <header
@@ -30,14 +29,13 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-[68px] max-w-[1080px] items-center px-6">
-        <Logo className={`mr-8 text-[1.3rem] ${light ? "text-white" : "text-ink"}`} />
+        <Logo className="mr-8 text-[1.3rem] text-ink" />
 
         <div className="hidden flex-1 items-center gap-1 md:flex">
           {nav.map((item) => {
             const external = item.href.startsWith("http");
-            const cls = `inline-flex items-center gap-1 rounded-md px-3 py-2 text-[0.95rem] font-medium transition ${
-              light ? "text-white/90 hover:text-white" : "text-dark hover:text-ink"
-            }`;
+            const cls =
+              "inline-flex items-center gap-1 rounded-md px-3 py-2 text-[0.95rem] font-medium text-dark transition hover:text-ink";
             const inner = (
               <>
                 {item.label}
@@ -59,19 +57,13 @@ export function Nav() {
         <div className="ml-auto hidden items-center gap-4 md:flex">
           <Link
             href="/#contact"
-            className={`text-[0.95rem] font-medium transition ${
-              light ? "text-white/90 hover:text-white" : "text-dark hover:text-ink"
-            }`}
+            className="text-[0.95rem] font-medium text-dark transition hover:text-ink"
           >
             Sign in
           </Link>
           <Link
             href="/#contact"
-            className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[0.95rem] font-medium transition-all duration-200 hover:-translate-y-px ${
-              light
-                ? "bg-white text-ink hover:shadow-[0_6px_18px_rgba(0,0,0,0.18)]"
-                : "bg-accent text-white hover:bg-accent-dark hover:shadow-[0_6px_18px_rgba(99,91,255,0.35)]"
-            }`}
+            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-[0.95rem] font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark hover:shadow-[0_6px_18px_rgba(99,91,255,0.35)]"
           >
             Contact sales
             <span aria-hidden>→</span>
@@ -79,9 +71,7 @@ export function Nav() {
         </div>
 
         <button
-          className={`ml-auto flex size-10 items-center justify-center rounded-lg md:hidden ${
-            light ? "text-white" : "text-ink"
-          }`}
+          className="ml-auto flex size-10 items-center justify-center rounded-lg text-ink md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
