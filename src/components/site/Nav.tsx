@@ -59,7 +59,7 @@ export function Nav() {
             href="/#contact"
             className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-[0.95rem] font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark hover:shadow-[0_6px_18px_rgba(99,91,255,0.35)]"
           >
-            Contact sales
+            Request a consultation
             <span aria-hidden>→</span>
           </Link>
         </div>
@@ -102,7 +102,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="mt-1 rounded-full bg-accent px-4 py-2.5 text-center text-[0.95rem] font-medium text-white"
             >
-              Contact sales →
+              Request a consultation →
             </Link>
           </div>
         </div>
