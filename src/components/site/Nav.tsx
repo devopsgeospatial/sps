@@ -57,12 +57,6 @@ export function Nav() {
         <div className="ml-auto hidden items-center gap-4 md:flex">
           <Link
             href="/#contact"
-            className="text-[0.95rem] font-medium text-dark transition hover:text-ink"
-          >
-            Sign in
-          </Link>
-          <Link
-            href="/#contact"
             className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-[0.95rem] font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark hover:shadow-[0_6px_18px_rgba(99,91,255,0.35)]"
           >
             Contact sales

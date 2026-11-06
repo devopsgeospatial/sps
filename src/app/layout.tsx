@@ -85,6 +85,12 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body>
+        {/* Without JS the scroll-reveal observer never runs, and every
+            `.reveal` element would stay at opacity 0 — i.e. a blank page
+            below the hero. This restores them for non-JS visitors. */}
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
