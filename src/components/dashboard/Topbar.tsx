@@ -6,7 +6,7 @@ export function Topbar() {
       <div>
         <h1 className="text-[0.98rem] font-semibold text-white">Spatial intelligence overview</h1>
         <p className="hidden text-[0.68rem] text-mute sm:block">
-          Real-time GeoAI monitoring · Kigali metropolitan area
+          GeoAI decision dashboard · Kigali metropolitan area
         </p>
       </div>
 

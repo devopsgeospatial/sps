@@ -1,10 +1,10 @@
 import { Section, SectionLabel } from "@/components/ui/Section";
 
 const values = [
-  { label: "Mission", text: "Practical GeoAI that enhances operational decisions across Africa." },
-  { label: "Vision", text: "The trusted regional GeoAI partner for lasting impact." },
-  { label: "Approach", text: "Engineering-first. Ground truth over theory. Adoption over sophistication." },
-  { label: "Reach", text: "Rwanda today. East Africa tomorrow. Africa always." },
+  { label: "Approach", text: "Engineering first." },
+  { label: "Standard", text: "Built for adoption." },
+  { label: "Measure", text: "If people do not use it, it does not count." },
+  { label: "Base", text: "Kigali, Rwanda." },
 ];
 
 export function Story() {
@@ -12,39 +12,31 @@ export function Story() {
     <Section id="about" className="border-t border-light bg-white">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionLabel>Our Story</SectionLabel>
+          <SectionLabel>Founders</SectionLabel>
           <h2 className="reveal display text-[clamp(1.9rem,3.4vw,2.7rem)] text-ink">
-            Built in Kigali.
+            Founded in Kigali by
             <br />
-            <span className="text-gradient">Deployed</span> across Rwanda.
+            <span className="text-gradient">three geospatial</span>
             <br />
-            Scaling across Africa.
+            practitioners.
           </h2>
         </div>
 
         <div className="reveal space-y-5 text-[0.95rem] font-light leading-[1.9] text-gray">
           <p>
-            Spatial Prime Solutions was founded by a geospatial practitioner who
-            spent years building and operating GeoAI systems for Rwanda&apos;s
-            most critical public-sector initiatives — infrastructure, urban
-            intelligence, land governance, and disaster resilience.
-          </p>
-          <p>
-            Working at the intersection of government institutions, satellite
-            data, and machine learning, the same pattern emerged:{" "}
+            Founded in Kigali by three geospatial practitioners combining
+            expertise in{" "}
             <strong className="font-semibold text-ink">
-              organisations investing in technology but struggling to extract
-              operational value
-            </strong>{" "}
-            because implementations weren&apos;t designed for African ground truth.
+              GeoAI and digital government systems, infrastructure management, and
+              transportation
+            </strong>
+            , with years of applied experience delivering geospatial solutions for
+            public institutions across East Africa.
           </p>
           <p>
-            Spatial Prime was founded to change that equation — not by importing
-            international frameworks, but by building from Rwanda outward.{" "}
-            <span className="font-medium text-accent">ZoneAgent</span>, Rwanda&apos;s
-            first natural-language zoning intelligence platform, was developed
-            independently as proof that GeoAI built for local context delivers
-            what generic solutions cannot.
+            <span className="font-medium text-accent">How we work:</span>{" "}
+            engineering first, built for adoption. If people do not use it, it does
+            not count.
           </p>
 
           <div className="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-light bg-light sm:grid-cols-2">

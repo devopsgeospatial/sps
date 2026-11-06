@@ -153,7 +153,7 @@ export const alerts: Alert[] = [
     id: "a3",
     kind: "change",
     severity: "info",
-    title: "Rapid footprint expansion (+18%)",
+    title: "Rapid built-up expansion (+18%)",
     where: "Kabuga · Gasabo",
     time: "1 hr ago",
     at: [700, 200],

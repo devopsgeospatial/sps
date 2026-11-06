@@ -4,15 +4,14 @@ export const site = {
   name: "Spatial Prime Solutions",
   shortName: "Spatial Prime",
   legalName: "Spatial Prime Solutions Ltd",
-  tagline: "GeoAI Infrastructure for Africa",
+  tagline: "Digital tools powered by GeoAI",
   location: "Kigali, Rwanda",
-  phone: "+250 781 602 046",
-  phoneHref: "tel:+250781602046",
+  website: "spatialprime.rw",
   email: "info@spatial-prime.com",
   product: {
     name: "ZoneAgent",
     url: "https://zoneagent.live",
-    blurb: "Rwanda's first AI zoning agent",
+    blurb: "Click on any plot and ask what can be built there",
   },
 } as const;
 

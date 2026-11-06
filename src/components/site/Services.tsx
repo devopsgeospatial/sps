@@ -1,49 +1,63 @@
 import {
-  Building2,
-  Building,
-  ShieldAlert,
   Landmark,
-  Layers3,
   Bot,
+  ClipboardCheck,
+  LayoutDashboard,
+  Wrench,
+  Route,
+  ShieldAlert,
+  Layers3,
 } from "lucide-react";
 import { Section, SectionLabel, SectionTitle } from "@/components/ui/Section";
 
 const services = [
   {
-    icon: Building2,
-    tint: "from-[#635bff] to-[#8b83ff]",
-    title: "Infrastructure Intelligence",
-    desc: "Real-time spatial insight on physical assets — energy, telecom, transport and utilities — to plan, monitor and protect the networks a country runs on.",
-  },
-  {
-    icon: Building,
-    tint: "from-[#0073e6] to-[#00d4ff]",
-    title: "Urbanization & Land Analytics",
-    desc: "See how cities actually grow. Track expansion, land use and development pressure to guide planning, land governance and real-estate decisions.",
-  },
-  {
-    icon: ShieldAlert,
-    tint: "from-[#00b8d4] to-[#00d4ff]",
-    title: "Disaster Risk Management",
-    desc: "Model flood, landslide and climate hazards against people and assets — turning terrain, rainfall and settlement data into early warning and resilience.",
-  },
-  {
     icon: Landmark,
-    tint: "from-[#7a73ff] to-[#635bff]",
-    title: "Public Service & Governance",
-    desc: "Location intelligence for the public sector — service coverage, compliance and evidence-based policy that decision-makers can act on with confidence.",
-  },
-  {
-    icon: Layers3,
-    tint: "from-[#635bff] to-[#0073e6]",
-    title: "Geospatial Data Platforms",
-    desc: "We gather and combine satellite, field and enterprise data into decision-ready platforms, dashboards and APIs your teams can trust and maintain.",
+    tint: "from-[#635bff] to-[#8b83ff]",
+    title: "Digital Public Services",
+    desc: "Citizen facing applications for planning, permits and land information, so people get answers without visiting an office.",
   },
   {
     icon: Bot,
     tint: "from-[#0073e6] to-[#635bff]",
-    title: "GeoAI Agents & Decision Support",
-    desc: "Ask questions in plain language and get grounded answers — like ZoneAgent — bringing spatial expertise to everyone, not just GIS specialists.",
+    title: "GeoAI Assistants",
+    desc: "Natural language tools grounded in official regulations and data, such as ZoneAgent.",
+  },
+  {
+    icon: ClipboardCheck,
+    tint: "from-[#00b8d4] to-[#00d4ff]",
+    title: "Field & Inspection Apps",
+    desc: "Mobile and web applications for data collection, inspection workflows and case management.",
+  },
+  {
+    icon: LayoutDashboard,
+    tint: "from-[#7a73ff] to-[#635bff]",
+    title: "Dashboards & Decision Platforms",
+    desc: "Executive dashboards, web maps and APIs that bring data into daily decisions.",
+  },
+  {
+    icon: Wrench,
+    tint: "from-[#0073e6] to-[#00d4ff]",
+    title: "Infrastructure Asset Management",
+    desc: "Digital inventories, condition monitoring and maintenance planning tools for roads, utilities and public assets.",
+  },
+  {
+    icon: Route,
+    tint: "from-[#635bff] to-[#0073e6]",
+    title: "Transport & Mobility Tools",
+    desc: "Route planning, network analysis and digital tools for transport operators and planning authorities.",
+  },
+  {
+    icon: ShieldAlert,
+    tint: "from-[#00d4ff] to-[#0073e6]",
+    title: "Disaster Risk Applications",
+    desc: "Digital tools that help institutions assess hazards and plan preparedness.",
+  },
+  {
+    icon: Layers3,
+    tint: "from-[#8b83ff] to-[#635bff]",
+    title: "Enterprise GIS, Integration & Training",
+    desc: "Platform design, system integration, data pipelines, and capacity building so teams can run and maintain their own tools.",
   },
 ];
 
@@ -52,13 +66,13 @@ export function Services() {
     <Section id="services" className="bg-off">
       <SectionLabel>What We Do</SectionLabel>
       <SectionTitle className="max-w-[680px]">
-        Geospatial intelligence that delivers{" "}
-        <span className="text-gradient">real business value</span>
+        Digital tools built on{" "}
+        <span className="text-gradient">spatial data and GeoAI</span>
       </SectionTitle>
       <p className="reveal mt-4 max-w-[560px] text-[1rem] leading-[1.7] text-dark">
-        We work across sectors to gather, combine and deliver real-time insight on
-        infrastructure, human behavior and the built environment — with a deep focus
-        on urbanization, disaster resilience and public service across Africa.
+        We build applications, platforms and decision tools for public
+        institutions, development partners and businesses — from citizen facing
+        services to the systems teams rely on every day.
       </p>
 
       <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-11 sm:grid-cols-2 lg:grid-cols-3">

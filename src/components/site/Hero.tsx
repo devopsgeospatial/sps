@@ -36,14 +36,16 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-[1080px] px-6 pt-40 pb-28 sm:pt-44 sm:pb-36">
         <div className="max-w-[640px]">
-          <h1 className="display text-[clamp(2.7rem,5.6vw,4.7rem)] text-ink">
-            High-quality <span className="text-gradient">geospatial intelligence</span> solutions
+          <h1 className="display text-[clamp(2.4rem,4.8vw,4rem)] text-ink">
+            Digital tools that make{" "}
+            <span className="text-gradient">spatial information usable</span> for
+            governments, businesses and citizens.
           </h1>
 
-          <p className="mt-6 max-w-[500px] text-[1.15rem] leading-[1.6] text-dark">
-            We gather, combine and deliver real-time spatial insight on physical
-            infrastructure, urbanization and disaster risk — turning geography into
-            confident decisions for public institutions and businesses across Africa.
+          <p className="mt-6 max-w-[520px] text-[1.15rem] leading-[1.6] text-dark">
+            We design and build GeoAI applications, platforms and decision tools
+            that turn regulations, maps and data into instant answers and smoother
+            public services.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -51,7 +53,7 @@ export function Hero() {
               href="/#contact"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[1rem] font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent hover:shadow-[0_10px_28px_rgba(99,91,255,0.35)]"
             >
-              Start now <span aria-hidden>→</span>
+              Request a consultation <span aria-hidden>→</span>
             </Link>
             <a
               href="https://zoneagent.live"
@@ -59,7 +61,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[1rem] font-medium text-ink shadow-[0_2px_8px_rgba(10,37,64,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(10,37,64,0.14)]"
             >
-              See the platform <span aria-hidden>→</span>
+              Try ZoneAgent <span aria-hidden>→</span>
             </a>
           </div>
         </div>

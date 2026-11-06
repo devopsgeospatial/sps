@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/Button";
 import { LogoMark } from "@/components/brand/Logo";
 
 const features = [
-  "Natural-language interface for zoning and land-use regulations",
-  "Instant permit-compliance analysis by location",
-  "Integrated with Rwanda's national land governance systems",
-  "Built and deployed independently through Spatial Prime",
+  "Click on any plot and ask what can be built there",
+  "Combines satellite imagery with official zoning regulations",
+  "Instant guidance on permitted use, height, coverage and floor area",
+  "Natural language — no maps or GIS jargon required",
 ];
 
 export function ZoneAgent() {
@@ -17,16 +17,16 @@ export function ZoneAgent() {
         <div>
           <div className="reveal mb-5 inline-flex items-center gap-2 rounded-full border border-accent/15 bg-accent-light px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.05em] text-accent">
             <span className="pulse-dot size-1.5 rounded-full bg-accent" />
-            Flagship product · Live
+            Product · Live
           </div>
           <h2 className="reveal display text-[clamp(1.9rem,3.6vw,2.9rem)] text-ink">
-            Meet <span className="text-gradient">ZoneAgent</span> — Rwanda&apos;s first AI
-            zoning agent
+            <span className="text-gradient">ZoneAgent</span> — click on any plot and
+            ask what can be built there
           </h2>
           <p className="reveal mt-4 text-[0.95rem] font-light leading-[1.8] text-gray">
-            Ask any question about land use in plain language. Instant, accurate
-            answers grounded in actual zoning regulations. No maps. No jargon.
-            Just clear answers.
+            ZoneAgent combines satellite imagery with official zoning regulations
+            to give instant guidance on permitted use, height, coverage and floor
+            area.
           </p>
 
           <ul className="reveal my-6">
@@ -42,7 +42,7 @@ export function ZoneAgent() {
           </ul>
 
           <Button href="https://zoneagent.live" external variant="fill" className="reveal">
-            Visit zoneagent.live
+            Try ZoneAgent
             <ArrowUpRight className="size-3.5" />
           </Button>
         </div>

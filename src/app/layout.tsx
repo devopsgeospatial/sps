@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { site } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -18,33 +19,49 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = "https://spatialprime.rw";
 
+// Organization structured data — name, location, email and website only.
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  legalName: site.legalName,
+  url: SITE_URL,
+  email: site.email,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kigali",
+    addressCountry: "RW",
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Spatial Prime Solutions | GeoAI for Africa",
+    default: "Spatial Prime Solutions | Digital GeoAI tools for public services",
     template: "%s | Spatial Prime Solutions",
   },
   description:
-    "Spatial Prime Solutions delivers high-quality geospatial intelligence — real-time insight on infrastructure, urbanization, disaster risk, and public service across Africa. Based in Kigali, Rwanda.",
+    "Kigali based firm building GeoAI applications, digital public services, field apps, dashboards and infrastructure tools for governments, businesses and citizens.",
   keywords: [
-    "geospatial intelligence",
     "GeoAI",
-    "spatial analytics",
-    "Rwanda",
-    "Africa",
-    "infrastructure intelligence",
-    "urbanization",
-    "disaster risk management",
-    "public service",
-    "land governance",
+    "digital public services",
+    "geospatial applications",
+    "GeoAI assistants",
+    "field and inspection apps",
+    "dashboards and decision platforms",
+    "infrastructure asset management",
+    "transport and mobility tools",
+    "disaster risk applications",
+    "enterprise GIS",
     "ZoneAgent",
     "Kigali",
+    "Rwanda",
   ],
   authors: [{ name: "Spatial Prime Solutions Ltd" }],
   openGraph: {
-    title: "Spatial Prime Solutions | GeoAI for Africa",
+    title: "Spatial Prime Solutions | Digital GeoAI tools for public services",
     description:
-      "High-quality geospatial intelligence — real-time insight on infrastructure, urbanization, disaster risk, and public service, grounded in Rwanda and scaling across the continent.",
+      "We design and build GeoAI applications, platforms and decision tools that turn regulations, maps and data into instant answers and smoother public services.",
     url: SITE_URL,
     siteName: "Spatial Prime Solutions",
     locale: "en_RW",
@@ -52,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spatial Prime Solutions | GeoAI for Africa",
+    title: "Spatial Prime Solutions | Digital GeoAI tools for public services",
     description:
-      "GeoAI infrastructure for infrastructure, urbanization, and disaster challenges across Africa.",
+      "Digital tools that make spatial information usable for governments, businesses and citizens.",
   },
   robots: { index: true, follow: true },
 };
@@ -67,7 +84,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

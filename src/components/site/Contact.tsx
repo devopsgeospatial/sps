@@ -2,29 +2,30 @@ import { ArrowRight } from "lucide-react";
 import { site } from "@/lib/site";
 
 const inquiryTypes = [
-  "Infrastructure intelligence",
-  "Urbanization & land analytics",
-  "Disaster risk management",
-  "Public service & governance",
-  "Geospatial data platforms & dashboards",
-  "GeoAI agents & decision support",
+  "Digital public services",
+  "GeoAI assistants",
+  "Field & inspection apps",
+  "Dashboards & decision platforms",
+  "Infrastructure asset management",
+  "Transport & mobility tools",
+  "Disaster risk applications",
+  "Enterprise GIS, integration & training",
   "ZoneAgent product demo",
   "Other",
 ];
 
 const orgTypes = [
-  "Government agency",
-  "Development partner (World Bank, UNDP, bilateral)",
-  "Private sector / Real estate",
-  "NGO / Non-profit",
-  "Academic / Research institution",
+  "Government",
+  "Development partner",
+  "Private sector",
+  "Academic or research",
   "Other",
 ];
 
 const details = [
   { label: "Location", value: site.location },
-  { label: "Phone", value: site.phone },
   { label: "Email", value: site.email },
+  { label: "Website", value: site.website },
   { label: "Product", value: "zoneagent.live" },
 ];
 
@@ -50,15 +51,15 @@ export function Contact() {
             Want to know more?
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-[1.05rem] leading-[1.6] text-dark">
-            Partner with us to see the power of our solutions in action. Book a
-            consultation or demo today and discover how we can help your business thrive.
+            Tell us what you need to build. Request a consultation or a demo and
+            we&apos;ll show you how the tools work.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-[1rem] font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-accent hover:shadow-[0_10px_28px_rgba(99,91,255,0.35)]"
             >
-              Let&apos;s go <span aria-hidden>→</span>
+              Request a consultation <span aria-hidden>→</span>
             </a>
             <a
               href="https://zoneagent.live"
@@ -66,7 +67,7 @@ export function Contact() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[1rem] font-medium text-ink shadow-[0_2px_8px_rgba(10,37,64,0.1)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(10,37,64,0.16)]"
             >
-              Explore ZoneAgent <span aria-hidden>→</span>
+              Try ZoneAgent <span aria-hidden>→</span>
             </a>
           </div>
         </div>
@@ -77,11 +78,11 @@ export function Contact() {
         <div className="mx-auto max-w-[760px]">
           <div className="reveal text-center">
             <h2 className="display text-[clamp(2rem,3.5vw,2.8rem)] text-ink">
-              Book a consultation or demo
+              Request a consultation
             </h2>
             <p className="mx-auto mt-3 max-w-[520px] text-[0.95rem] font-light leading-[1.7] text-gray">
               Answer a few quick questions and we&apos;ll connect you with the right
-              expertise to help your business thrive.
+              expertise for your project.
             </p>
           </div>
 
